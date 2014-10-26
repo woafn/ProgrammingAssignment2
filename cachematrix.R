@@ -29,6 +29,7 @@
 ## getmatrix: Retrieves the base matrix for the object
 ## setinv: Caches the inverse of the matrix
 ## getinv: Returns the inverse of the matrix from the cache
+## mname: Name of the matrix in the original environment
 
 makeCacheMatrix <- function(x = matrix()) {
   #message("In makeCacheMatrix")
@@ -51,9 +52,9 @@ makeCacheMatrix <- function(x = matrix()) {
   ## return the inverse
   getinv <- function() minv
   
-  originalMatrix <- x
+  #originalMatrix <- x
   
-  list(set=set, getmatrix=getmatrix, setinv=setinv, getinv=getinv, mname=mname, originalMatrix = originalMatrix)
+  list(set=set, getmatrix=getmatrix, setinv=setinv, getinv=getinv, mname=mname)
 
 }
 

@@ -79,37 +79,14 @@ cacheSolve <- function(x, ...) {
   
   
   if(!(identical(x$getmatrix(), eval(parse(text=x$mname))))) {
-#       message("matrices identical")
+
         message(paste(c("WARNING: Matrix", x$mname, "has changed since initiation of object", cachedObject), collapse=" "))
         message(paste(c("Updating object", cachedObject), collapse=" "))
         x$set(eval(parse(text=x$mname)))
-#         message(x$originalMatrix)
-#         x$originalMatrix <- testmatrix
-#         message(x$originalMatrix)
-# #         txMatrixName <- x$mname
-#         message(x$getmatrix()[1,1])
-#         message(eval(parse(text=x$mname))[1,1])
-#         tx <- paste(c(cachedObject, " <- ", "makeCacheMatrix(", txMatrixName, ")"), collapse=NULL)
-#         message(tx)
-#         eval(parse(text=tx))
-#         
-#         message(x$getmatrix()[1,1])
-#         message(eval(parse(text=x$mname))[1,1])
+
         
   }
-#   else
-#   { message(paste(c("Matrix", x$mname, "has changed since initiation of object", cachedObject), collapse=" "))
-#     message(paste(c("Reinitializing object", cachedObject), collapse=" "))
-#     message(x$getmatrix()[1,1])
-#     message(eval(parse(text=x$mname))[1,1])
-#     message("Try")
-#     assign(cachedObject, makeCacheMatrix(eval(parse(text=x$mname))))
-#     message(t)
-#     message("Try2")
-#     message(x$getmatrix()[1,1])
-#     message(eval(parse(text=x$mname))[1,1])
-#   }
-#   
+
   
   # check if inverse is already stored in the object
   # if so, return cached value
